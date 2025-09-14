@@ -103,7 +103,7 @@ curl http://localhost:8080/orders
     - `placeOrder_productNotFound()` ensures a `ProductNotFoundException` is thrown when the product does not exist.
     - `placeOrder_outOfStock()` verifies that attempting to order a product with zero stock throws an `OutOfStockException`.
 
-### Code Coverage
+### 3. Code Coverage
 - These unit tests provide coverage of **at least 80%** of the business logic in `OrderService` and the exception handling components.
 
 ---
