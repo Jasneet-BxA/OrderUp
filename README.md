@@ -102,8 +102,8 @@ curl http://localhost:8080/orders
     - `placeOrder_success()` tests ordering a product with sufficient stock, checking stock decrement, order saving, and returned data correctness.
     - `placeOrder_productNotFound()` ensures a `ProductNotFoundException` is thrown when the product does not exist.
     - `placeOrder_outOfStock()` verifies that attempting to order a product with zero stock throws an `OutOfStockException`.
-
-### 3. Code Coverage
-- These unit tests provide coverage of **at least 80%** of the business logic in `OrderService` and the exception handling components.
-
----
+    - `getOrders_returnsList()` Verifies that all orders are retrieved correctly from the repository.
+    - `placeOrder_multipleOrders_sequence()` Places 5 sequential orders and validates stock decrement to zero.
+    - `placeOrder_negativeStock_shouldFail()` Prevents orders on products with negative stock.
+    - `placeOrder_reserveStockFailsInternally()` Simulates failure in `reserveStock()` method and verifies exception.
+    - `placeOrder_concurrentOrders_onlyOneSucceeds()` Simulates two concurrent orders on one stock item; confirms only one succeeds (thread-safe + DB locking).
